@@ -3,6 +3,6 @@
 tess/**
 tmp/**
 icons/*/
-!icons/
+!icons
 rulauncher
 config.ini
