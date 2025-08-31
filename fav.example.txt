@@ -5,12 +5,12 @@
 # If you want use Systemicons, set "usesystemicons = true" in config.ini AND use only icon name, like "folder"
 # SSH
 /usr/bin/terminator;--new-tab,-e;ssh <USERNAME@HOSTORIP>;<NAME>;terminal.svg
-/usr/bin/terminator;--new-tab,-e;ssh <USERNAME@HOSTORIP> -t "cd /<REMOTEFOLDER> && bash --login";<NAME>;terminal.svg
+/usr/bin/terminator;--new-tab,-e;ssh <USERNAME@HOSTORIP> -t "cd /<REMOTEFOLDER> && bash --login";<NAME>;folder
 # CODE
-/usr/bin/codium;;<PATHTOYOURFILE>;<NAME>;visualstudiocode.svg
+/usr/bin/codium;;<PATHTOYOURFILE>;<NAME>;folder
 # CODE Remote
-/usr/bin/codium;--folder-uri;vscode-remote://ssh-remote+<USERNAME>@<HOSTORIP><REMOTEFOLDER>;<NAME>;visualstudiocode.svg
+/usr/bin/codium;--folder-uri;vscode-remote://ssh-remote+<USERNAME>@<HOSTORIP><REMOTEFOLDER>;<NAME>;folder
 # FILES
-/usr/bin/caja;-t;sftp://<pathtoyourfolder>;<NAME>;red-network.svg
+/usr/bin/caja;-t;sftp://<pathtoyourfolder>;<NAME>;folder
 # FTP
-/usr/bin/caja;-t;ftps://user:pass@<ftpurl>;<NAME>;orange-network.svg
+/usr/bin/caja;-t;ftps://user:pass@<ftpurl>;<NAME>;folder
