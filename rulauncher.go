@@ -15,6 +15,9 @@ import (
 // VARS
 var workDir string
 var useSystemIcons bool
+var catShow bool
+var catPrefix string
+var catSuffix string
 
 func readINI() string {
 	binPath, _ := os.Executable()
@@ -29,6 +32,10 @@ func readINI() string {
 
 	configFilePath := cfg.Section("main").Key("configfile").String()
 	useSystemIcons, _ = cfg.Section("icons").Key("usesystemicons").Bool()
+
+	catShow, _ = cfg.Section("misc").Key("showcat").Bool()
+	catPrefix = cfg.Section("misc").Key("catprefix").String()
+	catSuffix = cfg.Section("misc").Key("catsuffix").String()
 	// fmt.Println(configFilePath)
 	// fmt.Println(useSystemIcons)
 
@@ -65,11 +72,17 @@ func printFavList() {
 		if !strings.HasPrefix(line, "#") {
 			lineArr := strings.Split(line, ";")
 			cmd := lineArr[0]
-			cmdOpts := lineArr[1]
-			path := lineArr[2]
-			name := lineArr[3]
-			icon := getIcons(lineArr[4])
-			fmt.Printf("%s\x00icon\x1f%s\x1finfo\x1fexec;%s;%s;%s\n", name, icon, cmd, cmdOpts, path)
+			cat := lineArr[1]
+			cmdOpts := lineArr[2]
+			path := lineArr[3]
+			name := lineArr[4]
+			icon := getIcons(lineArr[5])
+
+			if !catShow {
+				fmt.Printf("%s%s\x00icon\x1f%s\x1finfo\x1fexec;%s;%s;%s\n", cat, name, icon, cmd, cmdOpts, path)
+			} else {
+				fmt.Printf("%s%s%s%s\x00icon\x1f%s\x1finfo\x1fexec;%s;%s;%s\n", catPrefix, cat, catSuffix, name, icon, cmd, cmdOpts, path)
+			}
 		}
 	}
 
