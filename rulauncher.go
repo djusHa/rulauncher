@@ -95,11 +95,7 @@ func main() {
 	rofiInfo := strings.Split(os.Getenv("ROFI_INFO"), ";")
 	// args := os.Args[1:]
 
-	// rofi first start
-	// if rofiArg == "0" {
-	// }
-
-	// selected value
+	// rofi first starts with ROFI_RETV = 0
 	if rofiArg == "0" {
 		printFavList()
 	}
