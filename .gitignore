@@ -2,6 +2,6 @@
 !.gitignore
 tess/**
 tmp/**
-icons/*
+icons/*/**
 rulauncher
 config.ini
