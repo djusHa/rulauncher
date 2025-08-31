@@ -1,3 +1,4 @@
+# <-- commentline
 # /path/to/BIN;CMD Options(arg1,arg2,arg...);Path;Name;Icon
 # AVOID using ";", this is the delimiter! use as example "&&" in bash commands
 # For using own icons, copy icons to programs "icons" Folder and use iconname + extension, like "terminal.svg"
