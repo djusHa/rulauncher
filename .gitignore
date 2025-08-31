@@ -2,6 +2,7 @@
 !.gitignore
 tess/**
 tmp/**
-icons/*.svg
+icons/**
+!icons/puticonsinhere
 rulauncher
 config.ini
